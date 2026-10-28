@@ -1,0 +1,114 @@
+%-------------------------------------------------------------------------------
+% resume_v2.tex
+% Classic single column serif layout:
+%   centered name, contact lines, bold headline, ruled uppercase sections,
+%   company/location with right aligned italic dates, italic job title,
+%   bullet points with bold quantitative metrics.
+%
+% All content lives in resume.yaml. resume_v2.lua reads it and fills in the
+% layout below, so this file only holds the design and the section order.
+%
+% Needs LuaLaTeX (tinyyaml.lua in this folder parses the YAML):
+%   lualatex -jobname=Balbir_Singh_SRE resume_v2.tex
+%-------------------------------------------------------------------------------
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[letterpaper, left=0.65in, right=0.65in, top=0.5in, bottom=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\linespread{1.0}
+
+%-------------------------------------------------------------------------------
+%	LAYOUT MACROS
+%-------------------------------------------------------------------------------
+% Indentation of company headings and of bullet points
+\newlength{\jobindent}\setlength{\jobindent}{1.6em}
+\newlength{\bulletindent}\setlength{\bulletindent}{3.6em}
+
+% Separator between company and location
+\newcommand{\locsep}{,\ }
+
+% Highlight a quantitative metric (numbers are what recruiters scan for)
+\newcommand{\metric}[1]{\textbf{#1}}
+
+% Name line with certification badges in the top right corner.
+% The badges take no space, so the name stays centered and the header
+% does not move. Badges are listed under "logos" in resume.yaml.
+% \nameline{Name}{Badges}
+\newsavebox{\namebox}
+\newsavebox{\logobox}
+\newcommand{\nameline}[2]{%
+  \sbox{\namebox}{#1}%
+  \sbox{\logobox}{#2}%
+  \usebox{\namebox}%
+  \rlap{\hspace{\dimexpr(\linewidth-\wd\namebox)/2-\wd\logobox\relax}%
+    \smash{\raisebox{\dimexpr\ht\namebox-\ht\logobox\relax}{\usebox{\logobox}}}}}
+
+% Underlined hyperlink for the contact lines
+\newcommand{\ulink}[2]{\underline{\href{#1}{#2}}}
+
+% Section heading: bold uppercase title with a full width rule beneath
+\newcommand{\rsection}[1]{%
+  \par\vspace{7pt}%
+  {\large\bfseries\MakeUppercase{#1}}\par\nopagebreak
+  \vspace{3pt}\hrule height 0.7pt\par\nopagebreak
+  \vspace{4pt}}
+
+% Job entry heading
+% \job{Company}{Location}{Title}{Dates}
+\newcommand{\job}[4]{%
+  \par\vspace{4pt}%
+  \hspace*{\jobindent}{\large\textbf{#1}}\locsep #2\hfill\textit{#4}\par\nopagebreak
+  \hspace*{\jobindent}\textit{#3}\par\nopagebreak
+  \vspace{1pt}}
+
+% Bullet list used under each job (never separated from its job heading)
+\makeatletter
+\newenvironment{rbullets}[1][\bulletindent]{%
+  \@beginparpenalty=\@M
+  \begin{list}{\textbullet}{%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\labelsep}{1.2em}%
+    \setlength{\labelwidth}{0.6em}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{1pt}%
+    \setlength{\partopsep}{0pt}}}
+  {\end{list}}
+\makeatother
+
+% Skills line: bold label followed by the list
+\newcommand{\skill}[2]{\item \textbf{#1:} #2}
+
+%-------------------------------------------------------------------------------
+%	DATA
+%-------------------------------------------------------------------------------
+\directlua{dofile("resume_v2.lua")}
+\directlua{resume.load("resume.yaml")}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\directlua{resume.header()}
+
+\rsection{Summary}
+\directlua{resume.summary()}
+
+\rsection{Work Experience}
+\directlua{resume.experience()}
+
+\rsection{Skills}
+\directlua{resume.skills()}
+
+\rsection{Education}
+\directlua{resume.education()}
+
+\end{document}

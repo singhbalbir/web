@@ -1,0 +1,141 @@
+# Resume data used by resume_v2.tex
+#
+# Build:  lualatex -jobname=Balbir_Singh_SRE resume_v2.tex
+#
+# Text conventions:
+#   **text**  is printed in bold (use it for numbers and metrics)
+#   --        is printed as an en dash
+#   LaTeX special characters (& % $ # _ { } ~ ^ \) are escaped automatically,
+#   so write them as plain text.
+#   Quote a value if it starts with * or contains ": ".
+
+name: Balbir Singh
+headline: Senior Site Reliability Engineer | Kubernetes, AWS & Platform Reliability
+
+# Badges shown in the top right corner of the header (paths relative to resume/)
+logos:
+  - logos/cka.png
+
+# Missing fields are skipped
+contact:
+  email: contact@singhbalbir.com
+  phone: "+1-650-276-9603"
+  website: www.singhbalbir.com
+  location: San Francisco Bay Area, CA
+  linkedin: linkedin.com/in/singhbalbir
+
+summary: >
+  Senior Site Reliability Engineer with **18+** years of experience keeping
+  customer facing platforms healthy, performant and right sized. Primary point of
+  contact for the health, performance and capacity of services on the Kubernetes
+  based Guidewire Cloud Platform (GWCP) in AWS. Takes pride in building platforms
+  that are highly scalable, highly available, secure and low latency.
+
+experience:
+  - company: Guidewire Software Inc
+    location: San Mateo, USA
+    title: Senior Site Reliability Engineer
+    start: Jan 2023
+    end: Present
+    highlights:
+      - Built a DR solution reducing RTO (Recovery Time Objective) from **6h** to **30min**.
+      - Ensured **99.99%** uptime across **100+** microservices by optimizing Kubernetes clusters.
+      - Migrated legacy workloads to the next generation Kubernetes platform.
+      - Mentor and guide a distributed team of senior SREs across **3** regions (US, EMEA & APAC).
+      - Program lead for Guidewire Production Readiness (GPR) to assess and provision new services to production.
+
+  - company: Groupon Inc
+    location: Santa Clara, USA
+    title: Team Lead, Site Reliability Engineering
+    start: Feb 2017
+    end: Jan 2023
+    highlights:
+      - Program lead for load balancer infrastructure processing **10K** RPS.
+      - Led the effort to migrate on-prem services to our cloud partner AWS.
+      - Analyzed system performance, identified problems, and designed, developed and implemented solutions.
+
+  - company: Groupon Shared Services Private Limited
+    location: Bengaluru, India
+    title: Senior DevOps Engineer
+    start: Aug 2015
+    end: Feb 2017
+    highlights:
+      - Partnered with product teams to embed SRE practices early in the SDLC, reducing production incidents by **40%**.
+      - Migrated the VIS infrastructure from LUP1 to DUB1 and from SNC1 to SAC1.
+      - Supported the infrastructure of the NTTHK data center for Tiger countries including Indonesia.
+      - Responsible for DevOps and release engineering for a highly scalable cloud commerce platform.
+
+  - company: Thermo Fisher Scientific India Private Limited
+    location: Bengaluru, India
+    title: Senior Site Reliability Engineer
+    start: Apr 2014
+    end: Jul 2015
+    highlights:
+      - Automated infrastructure on AWS using Chef and CloudFormation.
+      - Ensured scalability and reliability of production servers.
+      - Mentored new joiners and junior members of the team.
+
+  - company: LinkedIn Technology Information Private Limited
+    location: Bengaluru, India
+    title: Team Lead, Site Reliability Engineering
+    start: Nov 2011
+    end: Feb 2014
+    highlights:
+      - Built a team of **10** and started NOC operations from the Bangalore office.
+      - Served as Technical Escalation Manager during the India time zone.
+      - Assisted in the roll-out and deployment of new product features to support rapid iteration and constant growth.
+
+  - company: Cisco Systems India Private Limited
+    location: Bengaluru, India
+    title: IT Engineer
+    start: Sep 2010
+    end: Nov 2011
+    highlights:
+      - Designed and automated DR, reducing failover time by **50%**.
+      - Migrated a business critical application from the SJ to the RCDN data center.
+      - SME of messaging infrastructure for the Tibco implementation of JMS, BPIM and WSG.
+
+  - company: Yahoo Software Development India Private Limited
+    location: Bengaluru, India
+    title: Production Engineer
+    start: Mar 2008
+    end: Aug 2010
+    highlights:
+      - Ensured data flow across pipelines and delivered data to customers within SLA.
+      - Installed, configured and deployed RedHat and FreeBSD servers.
+      - Built systems, application installation, testing, cluster management & validation of delivered data.
+
+  - company: Google India Private Limited
+    location: Hyderabad, India
+    title: Associate System Administrator
+    start: Jul 2007
+    end: Jan 2008
+    highlights:
+      - Managed the regional data center.
+      - Configured, deployed and managed internal services in APAC and EMEA.
+
+skills:
+  - category: Programming
+    items: Bash, Perl, Python, Ruby, Go
+  - category: Platform
+    items: Linux, AWS Cloud, Docker, Kubernetes
+  - category: Deployment & CI/CD
+    items: Ansible, Terraform, Jenkins, GitHub Actions, TeamCity
+  - category: Observability
+    items: Nagios, Splunk, Prometheus, Grafana, Datadog
+  - category: Services
+    items: DNS, DHCP, CDN, PXE, Consul, Netscaler
+  - category: Databases
+    items: PostgreSQL, MongoDB, DynamoDB
+  - category: Certifications
+    items: CKA, RHCE, SCSA, CCNA, AWS CP, Terraform CA
+
+education:
+  - institution: Symbiosis International University
+    location: Pune, India
+    degree: Masters
+    year: 2007
+  - institution: Birla Institute of Technology
+    location: Ranchi, India
+    degree: Bachelors
+    year: 2005
