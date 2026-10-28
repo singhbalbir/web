@@ -1,6 +1,6 @@
-# Resume data used by resume_v2.tex
+# Resume data used by resume.tex
 #
-# Build:  lualatex -jobname=Balbir_Singh_SRE resume_v2.tex
+# Build:  lualatex -jobname=Balbir_Singh_SRE resume.tex
 #
 # Text conventions:
 #   **text**  is printed in bold (use it for numbers and metrics)

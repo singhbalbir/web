@@ -1,4 +1,4 @@
--- Reads resume.yaml and prints its content into resume_v2.tex using the
+-- Reads resume.yaml and prints its content into resume.tex using the
 -- layout macros defined there (\nameline, \ulink, \job, \skill, rbullets).
 -- Uses tinyyaml.lua from this folder to parse the YAML.
 

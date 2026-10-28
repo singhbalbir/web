@@ -1,15 +1,15 @@
 %-------------------------------------------------------------------------------
-% resume_v2.tex
+% resume.tex (v2)
 % Classic single column serif layout:
 %   centered name, contact lines, bold headline, ruled uppercase sections,
 %   company/location with right aligned italic dates, italic job title,
 %   bullet points with bold quantitative metrics.
 %
-% All content lives in resume.yaml. resume_v2.lua reads it and fills in the
+% All content lives in resume.yaml. resume.lua reads it and fills in the
 % layout below, so this file only holds the design and the section order.
 %
 % Needs LuaLaTeX (tinyyaml.lua in this folder parses the YAML):
-%   lualatex -jobname=Balbir_Singh_SRE resume_v2.tex
+%   lualatex -jobname=Balbir_Singh_SRE resume.tex
 %-------------------------------------------------------------------------------
 \documentclass[11pt, letterpaper]{article}
 
@@ -91,7 +91,7 @@
 %-------------------------------------------------------------------------------
 %	DATA
 %-------------------------------------------------------------------------------
-\directlua{dofile("resume_v2.lua")}
+\directlua{dofile("resume.lua")}
 \directlua{resume.load("resume.yaml")}
 
 %-------------------------------------------------------------------------------

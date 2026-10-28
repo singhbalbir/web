@@ -1,6 +1,6 @@
 -- Vendored copy of lua-tinyyaml 0.4.4 (MIT license)
 -- https://ctan.org/pkg/lua-tinyyaml
--- Kept here so resume_v2.tex builds without installing the package.
+-- Kept here so resume.tex builds without installing the package.
 -------------------------------------------------------------------------------
 -- tinyyaml - YAML subset parser
 -------------------------------------------------------------------------------
